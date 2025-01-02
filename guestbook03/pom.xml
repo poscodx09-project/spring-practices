@@ -19,6 +19,21 @@
     <name>guestbook03 Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+
+        <!-- Common DBCP -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+
+        <!-- spring jdbc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.3.23</version>
+        </dependency>
         <!-- spring web  -->
         <dependency>
             <groupId>org.springframework</groupId>

@@ -40,6 +40,13 @@
             <version>3.4.0</version>
         </dependency>
 
+        <!--jstl-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!-- junit jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -50,21 +57,26 @@
 
         <!-- servlet api -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
 
         <!-- jsp api -->
         <dependency>
-            <groupId>jakarta.servlet.jsp</groupId>
-            <artifactId>jakarta.servlet.jsp-api</artifactId>
-            <version>4.0.0</version>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.3</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
         </dependency>
     </dependencies>
     <build>
-        <finalName>hellospring</finalName>
+        <finalName>guestbook03</finalName>
     </build>
 </project>
