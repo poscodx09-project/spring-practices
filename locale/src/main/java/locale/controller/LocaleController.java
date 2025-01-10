@@ -1,6 +1,7 @@
 package locale.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.LocaleResolver;
 
@@ -12,9 +13,13 @@ public class LocaleController {
     public LocaleController(LocaleResolver localeResolver){
         this.localeResolver = localeResolver;
     }
-    @RequestMapping("/")
-    public String index(HttpServletRequest request) {
-        System.out.println(localeResolver.resolveLocale(request).getLanguage());
+    @RequestMapping("")
+    public String index(HttpServletRequest request, Model model) {
+
+        String lang = localeResolver.resolveLocale(request).getLanguage();
+        model.addAttribute("lang",lang);
+
+        System.out.println("[Chrome Language] : " + localeResolver.resolveLocale(request).getLanguage());
         return "index";
     }
 }

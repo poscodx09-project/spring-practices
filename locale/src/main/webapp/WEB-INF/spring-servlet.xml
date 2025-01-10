@@ -36,6 +36,6 @@
     </bean>
 
     <context:annotation-config />
-    <context:component-scan base-package="locale.controller" />
+    <context:component-scan base-package="locale.validation.controller" />
 
 </beans>

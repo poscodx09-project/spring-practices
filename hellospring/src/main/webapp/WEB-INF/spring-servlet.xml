@@ -19,6 +19,6 @@
     </mvc:interceptors>
 
     <context:annotation-config />
-    <context:component-scan base-package="hellospring.controller" />
+    <context:component-scan base-package="hellospring.validation.controller" />
 
 </beans>

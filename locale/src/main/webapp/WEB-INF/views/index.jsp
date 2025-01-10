@@ -10,41 +10,39 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href="${pageContext.request.contextPath }/assets/css/index.css" type="text/css" rel="stylesheet">
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load',function (){
             document
-                .querySelectorAll('#languages a')
-                .forEach(function(el) {
-                    el.addEventListener('click', function(evt) {
+                .querySelectorAll("#languages a")
+                .forEach(function (el){
+                    el.addEventListener('click',function (evt){
                         evt.preventDefault();
-                        // console.log(this.getAttribute('data-lang'));
+                        console.log(this.getAttribute("data-lang"));
+
                         document.cookie =
-                            "lang=" + this.getAttribute('data-lang') + ";" +        // name=value
-                            "path=" + "${pageContext.request.contextPath}" + ";" +    // path
-                            "max-age=" + (30*24*60*60);                               // max-age
-                        // reload
-                        location.reload();
-                    });
-                });
-        });
+                            "lang = " + this.getAttribute("data-lang") + ":" +
+                            "path = " + "${pageContext.request.contextPath}" + ";" +
+                            "max-age = " + (30*24*60*60) ;
+
+                        // location.reload();
+                    })
+                })
+        })
     </script>
 </head>
 <body>
     <h1><spring:message code="index.title" /></h1>
 
     <div id="languages">
-        <a href="" data-lang="ko">KR</a><a href="" class="active" data-lang="en">EN</a>
-        <a href="" data-lang="ko" class="active">KR</a><a href="" data-lang="en">EN</a>
-    </div>
-
-    <div id="languages">
         <c:choose>
-            <c:when test='${lang == "en"}'>
-                <a href="" data-lang="ko">KR</a><a href="" class="active" data-lang="en">EN</a>
+            <c:when test="${lang == 'en'}">
+                <a href="" data-lang = "ko">KR</a><a href="" class="active" data-lang ="en">EN</a>
             </c:when>
             <c:otherwise>
-                <a href="" data-lang="ko" class="active">KR</a><a href="" data-lang="en">EN</a>
+                <a href ="" data-lang="ko" class="active">KR</a><a href="" data-lang="en">EN</a>
             </c:otherwise>
         </c:choose>
+<%--        <a href="" data-lang="ko">KR</a><a href="" class="active" data-lang="en">EN</a>--%>
+<%--        <a href="" data-lang="ko" class="active">KR</a><a href="" data-lang="en">EN</a>--%>
     </div>
 </body>
 </html>

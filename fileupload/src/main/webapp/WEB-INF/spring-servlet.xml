@@ -23,5 +23,5 @@
     </bean>
 
     <context:annotation-config />
-    <context:component-scan base-package="fileupload.controller" />
+    <context:component-scan base-package="fileupload.validation.controller" />
 </beans>

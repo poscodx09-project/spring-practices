@@ -1052,7 +1052,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>cdmid</extension>
-        <mime-type>application/cdmi-domain</mime-type>
+        <mime-type>application/cdmi-validation.domain</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>cdmio</extension>

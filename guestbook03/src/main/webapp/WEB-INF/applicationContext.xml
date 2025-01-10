@@ -21,13 +21,13 @@
     </bean>
 
     <!--Jdbc Context -->
-    <bean class="guestbook.repository.template.JdbcContext">
+    <bean class="guestbook.validation.repository.template.JdbcContext">
         <constructor-arg index="0" ref="dataSource"></constructor-arg>
     </bean>
 
     <context:annotation-config />
 
-    <context:component-scan base-package="guestbook.repository">
+    <context:component-scan base-package="guestbook.validation.repository">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
