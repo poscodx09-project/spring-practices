@@ -16,12 +16,12 @@ import soundsystem.CDPlayer;
 public class CDPlayerXmlConfigTest {
 	@Autowired
 	CDPlayer cdPlayer;
-	
+
 	@Test
 	public void testCDPlayerNotNull() {
 		assertNotNull(cdPlayer);
 	}
-	
+
 	@Test
 	public void testPlay() {
 		assertEquals("Playing 붕붕 by 김하온", cdPlayer.play());
