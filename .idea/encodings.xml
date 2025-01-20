@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/hellospring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/locale/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/locale/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thymeleaf/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thymeleaf/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/validation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/validation/src/main/resources" charset="UTF-8" />
   </component>

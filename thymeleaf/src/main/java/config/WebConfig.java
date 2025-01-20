@@ -6,10 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 import org.thymeleaf.spring6.ISpringTemplateEngine;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
@@ -19,7 +22,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"thymeleaf.controller"})
+@ComponentScan({"controller"})
 public class WebConfig implements WebMvcConfigurer {
     // Resouce Handler
     @Override
@@ -50,6 +53,7 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("utf-8");
         templateResolver.setCacheable(false);
+        templateResolver.setCheckExistence(true);
 
         return templateResolver;
     }
@@ -70,11 +74,27 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver thymeleafViewResolver(ISpringTemplateEngine templateEngine) {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-
         viewResolver.setTemplateEngine(templateEngine);
         viewResolver.setCharacterEncoding("UTF-8");
-        viewResolver.setOrder(1);
+        viewResolver.setOrder(1); // 우선순위 설정
 
         return viewResolver;
     }
+
+    @Bean
+    public ViewResolver jspViewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setViewNames("views/*");
+        viewResolver.setPrefix("/WEB-INF/");
+        viewResolver.setSuffix(".jsp");
+        viewResolver.setOrder(0);
+
+        return viewResolver;
+    }
+
+
+
+
+
 }
